@@ -1,0 +1,31 @@
+const ICoordinates = [
+    {x:-1, y:8, primary: true, gpId:1},
+    {x:-3, y:8, primary: true, gpId:1},
+    {x:-3, y:6, primary: true, gpId:1},
+    {x:-1.5, y:6, primary: true, gpId:1},
+    {x:-1.5, y:4, primary: true, gpId:1},
+    {x:-1.5, y:2, primary: true, gpId:1},
+    {x:-1.5, y:0, primary: true, gpId:1},
+    {x:-1.5, y:-2, primary: true, gpId:1},
+    {x:-1.5, y:-4, primary: true, gpId:1},
+    {x:-1.5, y:-5, primary: true, gpId:1},
+    {x:-3, y:-5, primary: true, gpId:1},
+    {x:-3, y:-7, primary: true, gpId:1},
+    {x:-1, y:-7, primary: true, gpId:1},
+    {x:1, y:8, primary: true, gpId:1},
+    {x:3, y:8, primary: true, gpId:1},
+    {x:3, y:6, primary: true, gpId:1},
+    {x:1.5, y:6, primary: true, gpId:1},
+    {x:1.5, y:4, primary: true, gpId:1},
+    {x:1.5, y:2, primary: true, gpId:1},
+    {x:1.5, y:0, primary: true, gpId:1},
+    {x:1.5, y:-2, primary: true, gpId:1},
+    {x:1.5, y:-4, primary: true, gpId:1},
+    {x:1.5, y:-5, primary: true, gpId:1},
+    {x:3, y:-5, primary: true, gpId:1},
+    {x:3, y:-7, primary: true, gpId:1},
+    {x:1, y:-7, primary: true, gpId:1},
+];
+
+
+export default ICoordinates;
