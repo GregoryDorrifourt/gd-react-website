@@ -22,13 +22,13 @@ class Home extends Component {
                     <p className="tag-line">Lead Front-end developer<br/><strong><img src={mapPinSymbol} width="9" alt=""/> Paris</strong></p>
                     <ul className="links-list">
                         <li className="link-item">
-                            <a className="link" href="https://github.com/GregoryDorrifourt" target="_blank" title="Voir mon profil GitHub"><img className="link-image" src={githubLogo} alt="Github"/></a>
+                            <a className="link" href="https://github.com/GregoryDorrifourt" target="_blank" rel="noopener noreferrer" title="Voir mon profil GitHub"><img className="link-image" src={githubLogo} alt="Github"/></a>
                         </li>
                         <li className="link-item">
-                            <a className="link" href="https://www.linkedin.com/in/gregory-dorrifourt" target="_blank" title="Voir mon profil LinkedIn"><img className="link-image" src={linkedinLogo} alt="LinkedIn"/></a>
+                            <a className="link" href="https://www.linkedin.com/in/gregory-dorrifourt" target="_blank" rel="noopener noreferrer" title="Voir mon profil LinkedIn"><img className="link-image" src={linkedinLogo} alt="LinkedIn"/></a>
                         </li>
                         <li className="link-item">
-                            <a className="link" href="https://www.malt.fr/profile/gregorydorrifourt" target="_blank" title="Voir mon profil Malt"><img className="link-image" src={maltLogo} alt="Malt"/></a>
+                            <a className="link" href="https://www.malt.fr/profile/gregorydorrifourt" target="_blank" rel="noopener noreferrer" title="Voir mon profil Malt"><img className="link-image" src={maltLogo} alt="Malt"/></a>
                         </li>
                     </ul>
                 </div>
