@@ -49,6 +49,10 @@
     width: 100%;
     transition: opacity 0.4s;
 
+    @media screen and (max-height: 400px){
+        transform: scale(.7);
+    }
+
     &.hide {
         opacity: 0;
         
@@ -148,7 +152,7 @@
             .link-item {
                 
                 list-style: none;
-                background: rgba(255, 0, 0, 0);
+                background: red;
                 border-radius: 50%;
                 border: solid red 1px;
                 font-size: 14px;
@@ -160,6 +164,7 @@
                 width: 4em;
 
                 @media screen and (min-width: 960px) {
+                    background: rgba(255, 0, 0, 0);
                     
                     &::before {
 

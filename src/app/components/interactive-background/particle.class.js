@@ -7,11 +7,13 @@ export class Particle {
         this.coordinates = coordinates;
         
         if(canvas && !params){
+            this.ch = Math.max(canvas.height, 800);
+            this.cw = Math.max(canvas.width, 1000);
 
-            this.unitToPx = Math.min(canvas.width/20, this.maxPx) ;
+            this.unitToPx = Math.min( Math.min(canvas.width, canvas.height)/20, this.maxPx) ;
             
-            this.x = Math.random() * canvas.width;
-            this.y = Math.random() * canvas.height;
+            this.x = Math.random() * this.cw;
+            this.y = Math.random() * this.ch;
         } else {
             this.x = params.x;
             this.y = params.y;
@@ -44,27 +46,27 @@ export class Particle {
         this.y += this.vy;
 
         if(this.canvas) {
-            if(this.y > this.canvas.height + 20) {
+            if(this.y > this.ch + 20) {
                 this.y = -10;
-                this.x = Math.random()*this.canvas.width;
+                this.x = Math.random() * this.cw;
             }
             if(this.y < -20) {
-                this.y = this.canvas.height+10;
-                this.x = Math.random()*this.canvas.width;
+                this.y = this.ch + 10;
+                this.x = Math.random() * this.cw;
             }
-            if(this.x > this.canvas.width + 20) {
-                this.y = Math.random()*this.canvas.height;
+            if(this.x > this.cw + 20) {
+                this.y = Math.random() * this.ch;
                 this.x = -10;
             }
             if(this.x < -20) {
-                this.y = Math.random()*this.canvas.height;
-                this.x = this.canvas.width+10;
+                this.y = Math.random() * this.ch;
+                this.x = this.cw + 10;
             }
         }
     }
 
     moveToCoordinates(coordinates) {
-        
+
         this.gpId = coordinates.gpId;
 
         this.vx = 0;

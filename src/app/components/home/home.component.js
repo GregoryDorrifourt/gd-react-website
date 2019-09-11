@@ -28,6 +28,7 @@ class Home extends Component {
     ];
 
     render () {
+
         return (
             <div className={`Home ${this.props.animation.inProgress===true? 'hide':''}`}>
                 <div className="wrapper">

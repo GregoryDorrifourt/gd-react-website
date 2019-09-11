@@ -29,7 +29,7 @@ class InteractiveBackgroundComponent extends Component {
         ctx.canvas.width = ww;
         ctx.canvas.height = wh;
         
-        let numParticles = 70;
+        let numParticles = 90;
         
         if (window.matchMedia("(min-width: 481px)").matches) {
             numParticles = 100;
