@@ -1,21 +1,21 @@
 
 let HeartCoordinates = [
-    {x:0, y:6, primary: true, gpId:1},
-    {x:2, y:8, primary: true, gpId:1},
-    {x:5, y:8, primary: true, gpId:1},
-    {x:7, y:6, primary: true, gpId:1},
-    {x:7.5, y:3.5, primary: true, gpId:1},
-    {x:7, y:1, primary: true, gpId:1},
-    {x:4, y:-2, primary: true, gpId:1},
-    {x:2, y:-4, primary: true, gpId:1},
-    {x:0, y:-6, primary: true, gpId:1},
-    {x:-2, y:-4, primary: true, gpId:1},
-    {x:-4, y:-2, primary: true, gpId:1},
-    {x:-7, y:1, primary: true, gpId:1},
-    {x:-7.5, y:3.5, primary: true, gpId:1},
-    {x:-7, y:6, primary: true, gpId:1},
-    {x:-5, y:8, primary: true, gpId:1},
-    {x:-2, y:8, primary: true, gpId:1}
+    {x:0, y:6, gpId:1},
+    {x:2, y:8, gpId:1},
+    {x:5, y:8, gpId:1},
+    {x:7, y:6, gpId:1},
+    {x:7.5, y:3.5, gpId:1},
+    {x:7, y:1, gpId:1},
+    {x:4, y:-2, gpId:1},
+    {x:2, y:-4, gpId:1},
+    {x:0, y:-6, gpId:1},
+    {x:-2, y:-4, gpId:1},
+    {x:-4, y:-2, gpId:1},
+    {x:-7, y:1, gpId:1},
+    {x:-7.5, y:3.5, gpId:1},
+    {x:-7, y:6, gpId:1},
+    {x:-5, y:8, gpId:1},
+    {x:-2, y:8, gpId:1}
 ];
 
 const randomRanges = [
