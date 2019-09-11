@@ -47,11 +47,12 @@
     margin: 0 auto;
     position: fixed;
     width: 100%;
-    transition: all 0.7s ease;
+    transition: opacity 0.4s, transform 0.7s ease-in;
 
     &.hide {
+
         opacity: 0;
-        transform: translateY(10em)
+        transform: translateY(10em);
     }
     
     .wrapper {
@@ -83,20 +84,20 @@
                 transform: translateY(-3em);
                 transition: transform 0.3s ease;
 
-
-
                 &:hover {
                     transform: translateY(0);
                 }
             }
 
             .gd {
+
                 background-image: url('../../../assets/images/logo.svg');
                 background-repeat: no-repeat;
                 background-size: cover;
                 height: 3em;
                 width: 3em;
             }
+
             .heart {
                 
                 animation: heartbeat 1.5s infinite ease;
@@ -106,7 +107,6 @@
                 height: 3em;
                 width: 3em;
                 overflow: hidden;
-                
             }
         }
 
@@ -139,27 +139,36 @@
             padding: 0;
 
             .link-item {
+                
                 list-style: none;
-                position: relative;
+                background: rgba(255, 0, 0, 0);
+                border-radius: 50%;
+                border: solid red 1px;
+                cursor: pointer;
+                font-size: 14px;
+                height: 4em;
+                line-height: 5em;
+                text-align: center;
+                transition: background-color 0.3s linear, transform 0.4s ease-out;
+                width: 4em;
 
                 &+.link-item {
                     margin-left: 1em;
+                }
+                &:hover {
+                    background: red;
+                    @media screen and (min-width: 480px) {
+                        transform: translateY(-0.5em)
+                    }
                 }
             }
         }
 
         .link {
-
-            background: rgba(255, 0, 0, 0);
-            border-radius: 50%;
-            border: solid red 1px;
-            cursor: pointer;
-            font-size: 14px;
-            padding: 15px 12px 10px;
-            transition: background 0.3s ease;
-
-            &:hover {
-                background: red;
+            
+            .link-image {
+                width: 24px;
+                height: 24px;
             }
         }
     }

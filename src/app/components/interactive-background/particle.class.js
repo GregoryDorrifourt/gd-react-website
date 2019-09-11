@@ -64,6 +64,7 @@ export class Particle {
     }
 
     moveToCoordinates(coordinates) {
+        
         this.gpId = coordinates.gpId;
 
         this.vx = 0;

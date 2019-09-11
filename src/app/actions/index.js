@@ -4,6 +4,7 @@ import JsCoordinates from "../components/interactive-background/shapes/js-coordi
 
 export const ACTIONS = {
     ANIMATION_START: 'ANIMATION_START',
+    ANIMATION_WILL_STOP: 'ANIMATION_WILL_STOP',
     ANIMATION_STOP: 'ANIMATION_STOP',
     CHANGE_STEP: 'CHANGE_STEP'
 }
@@ -16,10 +17,24 @@ const shuffle = (a) => {
     return a;
 }
 
+const dispatchCoordinates = () => {
+    let arr = [];
+    const maxX = 50;
+    const maxY = 20
+    for (let i=0; i<150; i++) {
+        const x = (Math.random()*(maxX*2))-maxX;
+        const y = (Math.random()*(maxY*2))-maxY;
+        arr.push({x,y, gpId: i})
+    }
+    console.log(arr);
+    return arr;
+}
+
 const animationSteps = [
     {coordinates: shuffle(ICoordinates), duration: 1.5},
     {coordinates: shuffle(HeartCoordinates), duration: 1.5},
-    {coordinates: shuffle(JsCoordinates), duration: 2}
+    {coordinates: shuffle(JsCoordinates), duration: 1.5},
+    {coordinates: dispatchCoordinates(), duration: 1}
 ];
 
 export const startAnimation = () => {
@@ -49,5 +64,8 @@ const play = (dispatch, index = 0) => {
 }
 
 const stopAnimation = (dispatch) => {
-    dispatch({type: ACTIONS.ANIMATION_STOP});
+    dispatch({type: ACTIONS.ANIMATION_WILL_STOP});
+    setTimeout(() => {
+        dispatch({type: ACTIONS.ANIMATION_STOP});
+    }, 1000);
 }

@@ -8,6 +8,11 @@ const AnimationReducer = (state = {}, action) => {
                 ...state,
                 inProgress : true
             }
+        case ACTIONS.ANIMATION_WILL_STOP:
+            return {
+                ...state,
+                shuttingDown : true
+            }
         case ACTIONS.ANIMATION_STOP:
             return {
                 inProgress : false
