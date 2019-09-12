@@ -156,7 +156,6 @@
                 width: 4em;
 
                 @media screen and (min-width: 960px) {
-                    background: rgba(255, 0, 0, 0);
                     
                     &::before {
 
@@ -197,8 +196,9 @@
                     margin-left: 1em;
                 }
                 &:hover {
-                    background: red;
+                    
                     @media screen and (min-width: 960px) {
+                        background: #CC0000;
                         transform: translateY(-0.5em)
                     }
 
