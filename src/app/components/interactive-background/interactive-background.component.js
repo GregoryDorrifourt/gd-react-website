@@ -88,12 +88,12 @@ class InteractiveBackgroundComponent extends Component {
                     const p = particles[i];
                     
                     const connectNearbyDots = (target, xd, yd) => {
-                        const check = (p.vx === 0 && target.vx===0 && p.gpId===target.gpId); // Particles don't move and in same group
+                        const needStroke = (p.vx === 0 && target.vx===0 && p.gpId===target.gpId); // Particles don't move and in same group
                         const basicAlpha = 0.8-(Math.max(xd,yd)/threshold);
-                        const alpha = color.a ? color.a : (shape.length ? (check ? basicAlpha : 0.05) : basicAlpha);
+                        const alpha = (typeof color.a !== 'undefined') ? color.a : (shape.length ? (needStroke ? basicAlpha : 0.05) : basicAlpha);
                         
                         if(shape.length){
-                            if(check) {
+                            if(needStroke) {
                                 drawLine(p, target, color, alpha);
                             }
                         } else {
@@ -133,6 +133,7 @@ class InteractiveBackgroundComponent extends Component {
                     
                     const basicAlpha = p.size/20;
                     ctx.fillStyle = `rgba(255,255,255,${basicAlpha})`;
+                    
                     /* Draw particle */
                     if(shape.length && !this.props.animation.shuttingDown) {
                         const fillStyle = p.vx === 0 ? `rgba(${color.r},${color.g},${color.b},${color.a || basicAlpha})` : ctx.fillStyle;

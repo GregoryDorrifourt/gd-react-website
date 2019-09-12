@@ -31,7 +31,7 @@ const explosion = () => {
 
 const animationSteps = [
     {coordinates: shuffle(ICoordinates), duration: 1.5},
-    {coordinates: shuffle(HeartCoordinates), color: {r:255, g: 0, b:0, a: 1}, duration: 1.5},
+    {coordinates: shuffle(HeartCoordinates), color: {r:255, g: 0, b:0, a: 0.8}, duration: 1.5},
     {coordinates: shuffle(JsCoordinates), duration: 2},
     {coordinates: explosion(), duration: 1}
 ];
