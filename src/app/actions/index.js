@@ -31,7 +31,7 @@ const explosion = () => {
 
 const animationSteps = [
     {coordinates: shuffle(ICoordinates), duration: 1.5},
-    {coordinates: shuffle(HeartCoordinates), duration: 1.5},
+    {coordinates: shuffle(HeartCoordinates), color: {r:255, g: 0, b:0, a: 1}, duration: 1.5},
     {coordinates: shuffle(JsCoordinates), duration: 2},
     {coordinates: explosion(), duration: 1}
 ];
@@ -55,7 +55,7 @@ const play = (dispatch, index = 0) => {
         setTimeout(()=>{
             play(dispatch, index+1);
         }, duration)
-        dispatch({type: ACTIONS.CHANGE_STEP, payload: step.coordinates});
+        dispatch({type: ACTIONS.CHANGE_STEP, payload: step});
     } else {
         stopAnimation(dispatch);
     }

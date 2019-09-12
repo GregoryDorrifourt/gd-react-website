@@ -71,9 +71,14 @@ class InteractiveBackgroundComponent extends Component {
 
             if(!document.hidden) { // CHeck if tab is active
 
-                let shape = []
+                let shape = [];
+                let color = {r: 255, g: 255, b: 255};
                 if(this.props.animation.step){
-                    shape = this.props.animation.step
+                    shape = this.props.animation.step.coordinates;
+                    if(this.props.animation.step.color){
+                        color = this.props.animation.step.color;
+                    }
+                    
                 }
     
                 ctx.clearRect(0,0,ww,wh);
@@ -85,14 +90,14 @@ class InteractiveBackgroundComponent extends Component {
                     const connectNearbyDots = (target, xd, yd) => {
                         const check = (p.vx === 0 && target.vx===0 && p.gpId===target.gpId); // Particles don't move and in same group
                         const basicAlpha = 0.8-(Math.max(xd,yd)/threshold);
-                        const alpha = shape.length ? (check ? basicAlpha : 0.05) : basicAlpha;
+                        const alpha = color.a ? color.a : (shape.length ? (check ? basicAlpha : 0.05) : basicAlpha);
                         
                         if(shape.length){
                             if(check) {
-                                drawLine(p, target, alpha);
+                                drawLine(p, target, color, alpha);
                             }
                         } else {
-                            drawLine(p, target, alpha);
+                            drawLine(p, target, color, alpha);
                         }
                         
                     }
@@ -126,9 +131,13 @@ class InteractiveBackgroundComponent extends Component {
                         }
                     }
                     
+                    const basicAlpha = p.size/20;
+                    ctx.fillStyle = `rgba(255,255,255,${basicAlpha})`;
                     /* Draw particle */
                     if(shape.length && !this.props.animation.shuttingDown) {
-                        ctx.fillStyle = `rgba(255,255,255,${p.size/20})`;
+                        const fillStyle = p.vx === 0 ? `rgba(${color.r},${color.g},${color.b},${color.a || basicAlpha})` : ctx.fillStyle;
+                        ctx.fillStyle = fillStyle;
+                        
                         drawParticle(p, radius);
                         if(shape[i]) {
                             p.moveToCoordinates(shape[i])
@@ -136,7 +145,6 @@ class InteractiveBackgroundComponent extends Component {
                             p.move()
                         }
                     } else {
-                        ctx.fillStyle = `rgba(255,255,255,${p.size/20})`;
                         drawParticle(p, radius);
                         p.move()
                     }
@@ -154,10 +162,10 @@ class InteractiveBackgroundComponent extends Component {
             ctx.fill();
         }
 
-        const drawLine = (p, target, alpha) => {
+        const drawLine = (p, target, color, alpha) => {
             ctx.beginPath();
             ctx.lineWidth = 0.2;
-            ctx.strokeStyle = `rgba(255,255,255,${alpha})`;
+            ctx.strokeStyle = `rgba(${color.r},${color.g},${color.b},${alpha})`;
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(target.x, target.y);
             ctx.stroke();
