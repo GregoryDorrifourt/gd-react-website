@@ -20,7 +20,9 @@ let HeartCoordinates = [
     {x:3.5, y:7, gpId:1},
     {x:5, y:4, gpId:1},
     {x:2, y:4, gpId:1},
-
+    {x:5, y:1, gpId:1},
+    {x:3, y:2, gpId:1},
+    
     
     {x:0, y:-6, gpId:2},
     {x:-2, y:-4, gpId:2},
@@ -42,6 +44,8 @@ let HeartCoordinates = [
     {x:-3.5, y:7, gpId:2},
     {x:-5, y:4, gpId:2},
     {x:-2, y:4, gpId:2},
+    {x:-5, y:1, gpId:2},
+    {x:-3, y:2, gpId:2},
     
 ];
 

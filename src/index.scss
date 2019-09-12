@@ -1,6 +1,17 @@
+* {
+  box-sizing: border-box
+}
+html {
+  height: 100%;
+}
 body {
+
+  align-items: center;
   background: #404040;
+  display: flex;
   font-family: 'Raleway', sans-serif;
+  justify-content: center;
   margin: 0;
-  padding: 0;
+  min-height: 100%;
+  padding: 20px 0;
 }

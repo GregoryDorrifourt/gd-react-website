@@ -42,16 +42,8 @@
 
     display: flex;
     flex-flow: column;
-    height: 100%;
-    justify-content: center;
     margin: 0 auto;
-    position: fixed;
-    width: 100%;
     transition: opacity 0.4s;
-
-    @media screen and (max-height: 400px){
-        transform: scale(.7);
-    }
 
     &.hide {
         opacity: 0;
@@ -157,7 +149,7 @@
                 border: solid red 1px;
                 font-size: 14px;
                 height: 4em;
-                line-height: 5em;
+                line-height: 4.9em;
                 position: relative;
                 text-align: center;
                 transition: background-color 0.3s linear, transform 0.4s ease-out;

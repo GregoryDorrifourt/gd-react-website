@@ -17,7 +17,7 @@ const shuffle = (a) => {
     return a;
 }
 
-const dispatchCoordinates = () => {
+const explosion = () => {
     let arr = [];
     const maxX = 50;
     const maxY = 20
@@ -26,15 +26,14 @@ const dispatchCoordinates = () => {
         const y = (Math.random()*(maxY*2))-maxY;
         arr.push({x,y, gpId: i})
     }
-    console.log(arr);
     return arr;
 }
 
 const animationSteps = [
     {coordinates: shuffle(ICoordinates), duration: 1.5},
     {coordinates: shuffle(HeartCoordinates), duration: 1.5},
-    {coordinates: shuffle(JsCoordinates), duration: 1.5},
-    {coordinates: dispatchCoordinates(), duration: 1}
+    {coordinates: shuffle(JsCoordinates), duration: 2},
+    {coordinates: explosion(), duration: 1}
 ];
 
 export const startAnimation = () => {

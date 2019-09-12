@@ -1,0 +1,15 @@
+# SET CSP HEADER
+<IfModule mod_headers.c>
+    Header set Content-Security-Policy "upgrade-insecure-requests"
+</IfModule>
+
+# REDIRECTION TO HTTPS
+# https://wiki.apache.org/httpd/RewriteHTTPToHTTPS
+RewriteEngine On
+RewriteCond %{HTTPS} !=on
+RewriteRule ^/?(.*) https://%{SERVER_NAME}/$1 [R,L]
+
+# HSTS HEADER
+# Recommanded value: 15778800 (half a year)
+# Public deployment: https://hstspreload.appspot.com/
+Header always set Strict-Transport-Security "max-age=31557600; includeSubDomains; preload"
