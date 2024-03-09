@@ -39,7 +39,7 @@ class Home extends Component {
                         </div>
                     </div>
                     <h1 className="title" title="Gregory Dorrifourt">gregory<strong>dorrifourt</strong></h1>
-                    <p className="tag-line">Lead Front-end developer<br/><strong><img src={mapPinSymbol} width="9" alt=""/> Paris</strong></p>
+                    <p className="tag-line">Senior web developer | Free-lance<br/><strong><img src={mapPinSymbol} width="9" alt=""/> Paris et périphérie</strong></p>
                     <ul className="links-list">
                         {
                             this.links.map((link, index) => {
