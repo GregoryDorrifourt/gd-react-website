@@ -12,7 +12,7 @@ class Home extends Component {
     links = [
         {
             title: 'GitHub',
-            url: 'https://github.com/GregoryDorrifourt',
+            url: 'https://github.com/GregoryDorrifourt?tab=repositories',
             logo: githubLogo
         },
         {
@@ -23,7 +23,8 @@ class Home extends Component {
         {
             title: 'Malt',
             url: 'https://www.malt.fr/profile/gregorydorrifourt',
-            logo: maltLogo
+            logo: maltLogo,
+            fakeNotification: true
         }
     ];
 
@@ -39,13 +40,23 @@ class Home extends Component {
                         </div>
                     </div>
                     <h1 className="title" title="Gregory Dorrifourt">gregory<strong>dorrifourt</strong></h1>
-                    <p className="tag-line">Senior web developer | Free-lance<br/><strong><img src={mapPinSymbol} width="9" alt=""/> Paris et périphérie</strong></p>
+                    <p className="tag-line">Senior lead developer | Free-lance<br/><strong><img src={mapPinSymbol} width="9" alt=""/> Paris et périphérie ouest</strong></p>
                     <ul className="links-list">
                         {
                             this.links.map((link, index) => {
                                 return (
-                                    <li key={index} className="link-item" data-title={link.title}>
-                                        <a className="link" href={link.url} target="_blank" rel="noopener noreferrer"><img className="link-image" src={link.logo} alt={link.title}/></a>
+                                    <li key={index} className={`link-item ${!link.logo ? 'text':''}`} data-title={link.title}>
+                                        <a className={`link ${link.fakeNotification? 'fake-notification' : ''}`} href={link.url} target="_blank"
+                                           rel="noopener noreferrer">
+                                            {link.logo
+                                                ? <img
+                                                    className="link-image"
+                                                    src={link.logo}
+                                                    alt={link.title}
+                                                />
+                                                : link.title.toUpperCase()
+                                            }
+                                        </a>
                                     </li>
                                 )
                             })
@@ -57,7 +68,7 @@ class Home extends Component {
     }
 
     launchAnimation(e) {
-        if(!this.props.animation.inProgress) {
+        if (!this.props.animation.inProgress) {
             this.props.startAnimation();
         }
     }
