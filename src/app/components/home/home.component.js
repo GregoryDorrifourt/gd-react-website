@@ -18,13 +18,13 @@ class Home extends Component {
         {
             title: 'LinkedIn',
             url: 'https://www.linkedin.com/in/gregory-dorrifourt',
-            logo: linkedinLogo
+            logo: linkedinLogo,
+            fakeNotification: true
         },
         {
             title: 'Malt',
             url: 'https://www.malt.fr/profile/gregorydorrifourt',
-            logo: maltLogo,
-            fakeNotification: true
+            logo: maltLogo
         }
     ];
 
